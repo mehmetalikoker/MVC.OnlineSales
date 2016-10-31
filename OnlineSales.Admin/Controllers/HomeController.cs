@@ -1,4 +1,5 @@
-﻿using OnlineSales.Core.Infrastructure;
+﻿using OnlineSales.Admin.ViewModel;
+using OnlineSales.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace OnlineSales.Admin.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var pagelModel = new HomePageModel();
+            return View(pagelModel);
         }
 
     }
