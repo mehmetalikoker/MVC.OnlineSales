@@ -6,27 +6,34 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    <script type="text/javascript">
-        var appInsights=window.appInsights||function(config){
-            function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Ajax"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
-        }({
-            instrumentationKey:"f1524d09-5373-45a6-81cb-62fb4316c86a"
-        });
-        
-        window.appInsights=appInsights;
-        appInsights.trackPageView();
-    </script>
 </head>
 <body>
-    
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Online Store Application</p>
-        </footer>
+    <div class="navbar">
+        <div class="container">
+            @Html.ActionLink("Product Management","Index","Home",new { },new { @class="navbar-brand"})
+        </div>
     </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-2">
+                <hr />
+                <ul id="adminMenu" class="list-unstyled">
+                    <li>
+                        <a href="/"><i class="glyphicon glyphicon-home"></i>Ana Sayfa</a>
+                        <a href="/"><i class="glyphicon glyphicon-book"></i>Kategori</a>
+                        <a href="/"><i class="glyphicon glyphicon-asterisk"></i>Ürün</a>
+                    </li>
+                </ul>
+                <hr />
+            </div>
+            <div class="col-md-10">
+                <hr />
+                @RenderBody()
+                <hr />
+            </div>
+        </div>
+    </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
