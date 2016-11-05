@@ -1,0 +1,31 @@
+﻿@model OnlineSales.Data.Model.Category
+@{
+    ViewBag.Title = "Kategori Silme";
+}
+
+<h3>Kategori Silme</h3>
+
+<h4>
+    Bu Kategoriyi silmek istiyor musunuz ?
+</h4>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=> model.CategoryName)
+        </dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <input type="submit" value="Sil" class="btn btn-default" />
+        <hr />
+        @Html.ActionLink("Listeye Dön","Index")
+    </div>
+}
+

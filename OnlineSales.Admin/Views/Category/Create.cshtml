@@ -4,7 +4,7 @@
     ViewBag.Title = "Yeni Kategori Bilgileri";
 }
 
-<h2>Yeni Kategori</h2>
+<h3>Yeni Kategori</h3>
 
 @using (Html.BeginForm())
 {
@@ -16,7 +16,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CategoryName, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryName, new { @class = "form-controller" })
+                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-controller" } })
                 @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
             </div>
         </div>

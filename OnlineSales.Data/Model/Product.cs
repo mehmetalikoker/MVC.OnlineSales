@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,8 @@ namespace OnlineSales.Data.Model
         [Key]
         public int ProductId { get; set; }
 
-        [Required]
+        [DisplayName("Ürün Adı")]
+        [Required(ErrorMessage = "{0} boş geçilmemelidir")]
         public string ProductName { get; set; }
 
         [Required]

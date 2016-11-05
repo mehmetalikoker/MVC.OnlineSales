@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,8 @@ namespace OnlineSales.Data.Model
         [Key]
         public int CategoryId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="{0} boş geçilmemelidir")]
+        [DisplayName("Kategori Adı")]
         public string CategoryName { get; set; }
 
         public ICollection<Product> Products { get; set; }
