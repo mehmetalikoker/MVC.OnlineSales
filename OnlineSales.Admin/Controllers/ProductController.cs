@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineSales.Core.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,18 @@ namespace OnlineSales.Admin.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
+        private readonly IProductRepository _productRepository;
+
+        public ProductController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var productList = _productRepository.GetAll().ToList();
+
+            return View(productList);
         }
     }
 }
