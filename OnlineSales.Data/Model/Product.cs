@@ -20,6 +20,7 @@ namespace OnlineSales.Data.Model
         [Required]
         public int CategoryId { get; set; }
 
+        [DisplayName("Kategori Adı")]
         public virtual Category Category { get; set; }
 
 
